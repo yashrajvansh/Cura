@@ -1,0 +1,36 @@
+# Tenants in the cura-tenants dispatch namespace
+#
+# slug -> real repo. Each is the same stub script
+# (crates/cura-tenant-stub/index.js) deployed under a distinct name,
+# with TENANT_NAME baked in as an env var at deploy time.
+#
+# slug|owner/repo
+yashrajvansh-curator|yashrajvansh/curator
+comfortcurators-ya-ra|comfortcurators/YA-RA
+comfortcurators-curatom-polyglot|comfortcurators/Curatom-Polyglot
+yashrajvansh-curatom-cloudflare|yashrajvansh/Curatom-CloudFlare
+comfortcurators-k-oiz|comfortcurators/k-oiz-
+yashrajvansh-cura|yashrajvansh/Cura
+comfortcurators-curator|comfortcurators/curator
+comfortcurators-github|comfortcurators/.github
+comfortcurators-host|comfortcurators/Host
+comfortcurators-lil-better|comfortcurators/lil-better
+comfortcurators-sol|comfortcurators/Sol
+yashrajvansh-brave-raven-horizon-daisy|yashrajvansh/brave-raven-horizon-daisy
+comfortcurators-hostos|comfortcurators/HostOS
+comfortcurators-seek|comfortcurators/seek
+yashrajvansh-sissyphus|yashrajvansh/sissyphus
+comfortcurators-sonos|comfortcurators/sonos
+comfortcurators-superhostos|comfortcurators/Superhostos
+comfortcurators-curatory|comfortcurators/curatory
+comfortcurators-llm|comfortcurators/llm
+comfortcurators-in|comfortcurators/in
+comfortcurators-rajvanshyash|comfortcurators/rajvanshyash
+comfortcurators-kimi|comfortcurators/kimi
+comfortcurators-comfort-ci|comfortcurators/comfort-ci
+yashrajvansh-curatom|yashrajvansh/Curatom
+comfortcurators-curatom|comfortcurators/Curatom
+comfortcurators-vone|comfortcurators/vone
+comfortcurators-vtwo|comfortcurators/Vtwo
+yashrajvansh-earthly|yashrajvansh/earthly
+yashrajvansh-nlu-benchmark|yashrajvansh/nlu-benchmark

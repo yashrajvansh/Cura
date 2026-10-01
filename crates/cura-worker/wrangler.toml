@@ -1,0 +1,65 @@
+name = "cura"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-12-01"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "cargo install -q worker-build --version ^0.1 && worker-build --release"
+
+[[r2_buckets]]
+binding = "BODIES_RI"
+bucket_name = "cura-ri"
+
+[[r2_buckets]]
+binding = "BODIES_RIP"
+bucket_name = "cura-rip"
+
+[[r2_buckets]]
+binding = "BODIES_RP"
+bucket_name = "cura-rp"
+
+[[d1_databases]]
+binding = "DB_DI"
+database_name = "cura-di"
+database_id = "e71b0b5a-66cd-4795-a28b-557ddef78208"
+migrations_dir = "migrations/intent"
+
+[[d1_databases]]
+binding = "DB_DIP"
+database_name = "cura-dip"
+database_id = "f6759b67-1a97-43aa-86f5-33a7536e90f8"
+migrations_dir = "migrations/weave"
+
+[[d1_databases]]
+binding = "DB_DP"
+database_name = "cura-dp"
+database_id = "1dfdd83d-ca81-4b3d-a5bc-09ff78bcf8c9"
+migrations_dir = "migrations/pattern"
+
+[[vectorize]]
+binding = "VECTORIZE_INDEX"
+index_name = "cura-weave"
+
+[[kv_namespaces]]
+binding = "SEEN"
+id = "5e8ab98b38e6466dbc2dec6064f26d2e"
+
+[[dispatch_namespaces]]
+binding = "TENANTS"
+namespace = "cura-tenants"
+
+[vars]
+CURA_SERVICE_ID = "cura"
+LOG_LEVEL = "info"
+
+[observability]
+enabled = true
+
+# A quiet self-check, not a monitor: writes and reads back one canary
+# fact so a write path that silently stops working (the exact failure
+# mode fixed 2026-09-15 -- D1Sink's spawn_local returning 200 without
+# the write ever landing) leaves a trace in Workers logs. Logs only --
+# no external call, no notification, nothing that pages anyone. See
+# the scheduled() handler in src/lib.rs.
+[triggers]
+crons = ["17 */6 * * *"]

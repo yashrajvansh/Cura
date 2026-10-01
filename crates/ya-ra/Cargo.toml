@@ -1,0 +1,16 @@
+[package]
+name = "ya-ra"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+publish = false
+
+[[bin]]
+name = "yara"
+path = "src/main.rs"
+
+[lib]
+name = "ya_ra"
+path = "src/lib.rs"
+
+[dependencies]
